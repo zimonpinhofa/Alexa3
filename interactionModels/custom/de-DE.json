@@ -1,0 +1,361 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "easy do",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "hilfe"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AddTodo",
+          "slots": [
+            {
+              "name": "todoName",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{todoName}"
+              ]
+            },
+            {
+              "name": "listName",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{listName}"
+              ]
+            }
+          ],
+          "samples": [
+            "füge eine Aufgabe zu {listName} hinzu",
+            "füge {todoName} zu meiner Liste",
+            "füge eine Aufgabe hinzu"
+          ]
+        },
+        {
+          "name": "ShowTodo",
+          "slots": [
+            {
+              "name": "listName",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "welche aufgaben habe ich",
+            "was steht auf {listName}"
+          ]
+        },
+        {
+          "name": "DoneTodo",
+          "slots": [
+            {
+              "name": "todoName",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{todoName}"
+              ]
+            }
+          ],
+          "samples": [
+            "ich bin fertig mit {todoName}",
+            "ich habe eine Aufgabe erledigt",
+            "ich habe {todoName} erledigt"
+          ]
+        },
+        {
+          "name": "DeleteTodo",
+          "slots": [
+            {
+              "name": "todoName",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{todoName}"
+              ]
+            }
+          ],
+          "samples": [
+            "lösche eine Aufgabe",
+            "lösche {todoName} von meiner Liste",
+            "lösche {todoName} "
+          ]
+        },
+        {
+          "name": "AddList",
+          "slots": [
+            {
+              "name": "listName",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{listName}"
+              ]
+            }
+          ],
+          "samples": [
+            "füge die Liste {listName} hinzu",
+            "erstelle die Liste {listName}",
+            "füge eine neue Liste hinzu",
+            "erstelle eine Liste ",
+            "erstelle eine neue Liste",
+            "füge eine Liste hinzu"
+          ]
+        },
+        {
+          "name": "DeleteList",
+          "slots": [
+            {
+              "name": "listName",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{listName}"
+              ]
+            }
+          ],
+          "samples": [
+            "Lösche eine Liste",
+            "Lösche die Liste {listName}"
+          ]
+        },
+        {
+          "name": "DeleteDoneTodo",
+          "slots": [],
+          "samples": [
+            "lösche alle erledigten Aufgaben"
+          ]
+        },
+        {
+          "name": "ShowLists",
+          "slots": [],
+          "samples": [
+            "Welche Listen habe ich"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "DeleteTodo",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.666326401252"
+          },
+          "slots": [
+            {
+              "name": "todoName",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.505867318944.66444142166"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DoneTodo",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "todoName",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.60896942485.137265795376"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AddTodo",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "todoName",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.403769221504.987475622552"
+              }
+            },
+            {
+              "name": "listName",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.237250524387.1399883433307"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AddList",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "listName",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.981561924036.212266219736"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DeleteList",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.598348629919"
+          },
+          "slots": [
+            {
+              "name": "listName",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1105300588987.1244585664934"
+              }
+            }
+          ]
+        },
+        {
+          "name": "DeleteDoneTodo",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.572602131660"
+          },
+          "slots": []
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.666326401252",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Soll {todoName} wirklich gelöscht werden?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.60896942485.137265795376",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Welche Aufgabe hast du abgeschlossen?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.403769221504.987475622552",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Wie soll ich die Aufgabe nennen?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1105300588987.1244585664934",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Soll {listName} wirklich gelöscht werden?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1105300588987.1244585664934",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Welche Liste soll gelöscht werden?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.981561924036.212266219736",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Wie soll die neue Liste heißen?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.505867318944.66444142166",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Welche Aufgabe soll gelöscht werden?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.505867318944.66444142166",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Soll {todoName} wirklich gelöscht werden?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.572602131660",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Willst du wirklich alle erledigten Aufgaben löschen?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.237250524387.1399883433307",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Auf welche Liste soll die Aufgabe hinzugefügt werden"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.598348629919",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Soll die Liste {listName} wirklich gelöscht werden?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "15"
+}
